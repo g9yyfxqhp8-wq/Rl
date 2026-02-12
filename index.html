@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RL 3D Full Smart Bot</title>
+<style>
+body { margin:0; overflow:hidden; background:#0a0a0a; }
+#ui { position: absolute; width: 100%; top: 20px; font-family: 'Arial Black', sans-serif; text-align:center; color:white; pointer-events:none; z-index:10; }
+#playerNames { display:flex; justify-content:space-between; width:400px; margin:0 auto; font-size:20px; text-shadow:1px 1px 3px black; margin-bottom:5px; }
+.player.blue{color:#00bfff} .player.red{color:#ff3300}
+#scoreBoard { font-size:60px; font-weight:bold; text-shadow:2px2px5px black; }
+.teamScore.blue{color:#00bfff;} .teamScore.red{color:#ff3300;}
+#scoreDivider{color:white;}
+#timer{font-size:30px; text-shadow:1px1px3px black; margin-top:5px; transition:transform 0.1s;}
+#boostBar{position:absolute; bottom:30px; left:50%; transform:translateX(-50%); width:400px; height:25px; border:3px solid white; border-radius:5px; overflow:hidden; box-shadow:0 0 15px #fff;}
+#boostFill{height:100%; width:100%; background:linear-gradient(90deg,#00ff00,#00ff88); box-shadow:0 0 10px #00ff88; transition:width 0.1s linear, background 0.3s; border-radius:5px;}
+</style>
+</head>
+<body>
+
+<div id="ui">
+  <div id="playerNames">
+    <span class="player blue">Blue Player</span>
+    <span class="player red">Red Player (Bot)</span>
+  </div>
+  <div id="scoreBoard">
+    <span id="scoreA" class="teamScore blue">0</span>
+    <span id="scoreDivider"> - </span>
+    <span id="scoreB" class="teamScore red">0</span>
+  </div>
+  <div id="timer">03:00</div>
+</div>
+
+<div id="boostBar"><div id="boostFill"></div></div>
+
+<script type="module" src="./js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+import { initScene } from "./scene.js";
+import { initPhysics } from "./physics.js";
+import { createVehicle } from "./vehicle.js";
+import { initControls } from "./controls.js";
+import { initCamera } from "./camera.js";
+import { initBoostPads } from "./boost.js";
+import { initBall } from "./ball.js";
+import { initGoals } from "./goals.js";
+import { initUI } from "./ui.js";
+import { animate } from "./loop.js";
+import { initBot } from "./bot.js";
+
+const state = {};
+state.scene = initScene();
+state.world = initPhysics();
+state.vehicle = createVehicle(state.world);
+initControls(state);
+initCamera(state);
+initBoostPads(state);
+state.ball = initBall(state.world, state.scene);
+initGoals(state);
+initUI(state);
+state.bot = initBot(state);
+animate(state);
